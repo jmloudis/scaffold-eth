@@ -11,9 +11,17 @@ contract YourContract {
 
   string public purpose = "Building Unstoppable Apps!!!";
 
+  address public owner;
+
   constructor() {
     // what should we do on deploy?
+    owner = msg.sender;
   }
+
+  // function withdrawel() public {
+  //   require(msg.sender == owner);
+  //   msg.sender.transfer((address(this)).balance);
+  // }
 
   function setPurpose(string memory newPurpose) public {
       purpose = newPurpose;
